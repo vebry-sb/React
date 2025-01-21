@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'; // Mengimpor Routes dan Route dari react-router-dom
-import Sidebar from './Sidebar'; // Mengimpor Sidebar
+import Sidebar from './components/common/Sidebar'; // Mengimpor Sidebar
 import OverviewPage from './Pages/OverviewPage'; // Mengimpor halaman Overview
 import ProductsPage from './Pages/ProductsPage'; // Mengimpor halaman Produk
 import UsersPage from './Pages/UsersPage';
