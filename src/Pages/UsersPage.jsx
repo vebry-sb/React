@@ -30,7 +30,7 @@ const UsersPage = () => {
         <StatCard
           name="Total Users"
           icon={User2Icon}
-          value={userStats.totalUsers.toLocalString()}
+          value={userStats.totalUsers.toLocaleString()}
           color='#6366F1'
         />
 
@@ -44,7 +44,7 @@ const UsersPage = () => {
         <StatCard
           name="Active Users"
           icon={UserCheck2}
-          value={userStats.activeUsers.toLocalString()}
+          value={userStats.activeUsers.toLocaleString()}
           color='#F59E0B'
         />
 
