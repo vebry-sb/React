@@ -26,7 +26,7 @@ const OverviewPage = () => {
           <StatCard 
             name="Total Sales" // Nama statistik
             icon={Zap} // Ikon yang digunakan
-            value="$12,345" // Nilai statistik
+            value="$1,856,784" // Nilai statistik
             color="#6366F1" // Warna untuk statistik ini
           />
           

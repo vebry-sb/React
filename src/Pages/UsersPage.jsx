@@ -9,10 +9,10 @@ import UserDemographicsChart from "../components/users/UserDemographicsChart"; /
 
 // Data statistik pengguna
 const userStats = {
-  totalUsers: 15842, // Total pengguna
+  totalUsers: 15842, // Total penggunaa
   newUsersToday: 235, // Pengguna baru hari ini
   activeUsers: 98510, // Pengguna aktif
-  churnRate: 3.8, // Tingkat churn
+  churnRate: 0.0323, // Tingkat churn
 };
 
 const UsersPage = () => {
@@ -54,7 +54,7 @@ const UsersPage = () => {
           <StatCard
             name="Churn Rate"
             icon={UserX}
-            value={userStats.churnRate}
+            value={`${(userStats.churnRate * 100).toFixed(2)}%`} // Mengalikan dengan 100 dan menambahkan simbol persen
             color="#EF4444"
           />
         </motion.div>
