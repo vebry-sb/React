@@ -3,18 +3,18 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContai
 
 // Data penjualan untuk grafik
 const salesData = [
-  { name: 'Jan', sales: 4000 },
-  { name: 'Feb', sales: 3000 },
-  { name: 'Mar', sales: 2000 },
-  { name: 'Apr', sales: 2780 },
-  { name: 'May', sales: 1890 },
-  { name: 'Jun', sales: 2390 },
-  { name: 'Jul', sales: 3490 },
-  { name: 'Aug', sales: 4000 },
-  { name: 'Sep', sales: 3000 },
-  { name: 'Oct', sales: 2000 },
-  { name: 'Nov', sales: 2780 },
-  { name: 'Dec', sales: 1890 },
+  { name: 'Jan', sales: 1200 },
+  { name: 'Feb', sales: 1350 },
+  { name: 'Mar', sales: 1450 },
+  { name: 'Apr', sales: 1320 },
+  { name: 'May', sales: 1280 },
+  { name: 'Jun', sales: 1400 },
+  { name: 'Jul', sales: 1500 },
+  { name: 'Aug', sales: 1650 },
+  { name: 'Sep', sales: 1400 },
+  { name: 'Oct', sales: 1300 },
+  { name: 'Nov', sales: 1350 },
+  { name: 'Dec', sales: 1442 },
 ];
 
 // Komponen untuk grafik overview penjualan

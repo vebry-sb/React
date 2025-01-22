@@ -16,7 +16,7 @@ const COLORS = ['#6366F1', '#8B5CF6', '#EC4899', '#10B981', '#F59E08', '#3B82F6'
 const SalesChannelChart = () => {
   return (
     <motion.div
-      className="bg-gray-800 bg-opacity-50 backdrop-blur-md shadow-lg rounded-xl p-6 border border-gray-700" // Styling menggunakan Tailwind CSS
+      className="bg-gray-800 bg-opacity-50 backdrop-blur-md shadow-lg rounded-xl p-6 lg:col-span-2 border border-gray-700" // Styling menggunakan Tailwind CSS
       initial={{ opacity: 0, y: 20 }} // Animasi awal: opacity 0 dan posisi vertikal (y) diatur 20px
       animate={{ opacity: 1, y: 0 }} // Animasi akhir: opacity 1 dan posisi vertikal diatur ke 0 (normal)
       transition={{ delay: 0.4 }} // Penundaan animasi selama 0.4 detik

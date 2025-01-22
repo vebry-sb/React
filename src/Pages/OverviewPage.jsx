@@ -60,10 +60,6 @@ const OverviewPage = () => {
           {/* Menampilkan grafik overview penjualan dan distribusi kategori */}
           <SalesOverviewChart />
           <CategoryDistributionChart />
-        </div>
-
-        <div className="grid grid-col-1 gap-8 mb-8">
-          {/* Menampilkan grafik saluran penjualan */}
           <SalesChannelChart />
         </div>
       </main>

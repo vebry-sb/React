@@ -2,23 +2,23 @@ import { motion } from 'framer-motion'; // Mengimpor motion dari framer-motion u
 import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from 'recharts'; // Mengimpor komponen yang diperlukan untuk membuat grafik dengan recharts
 
 // Data penjualan untuk grafik
-const salesData = [
-  { name: 'Jan', sales: 4000 },
-  { name: 'Feb', sales: 3000 },
-  { name: 'Mar', sales: 2000 },
-  { name: 'Apr', sales: 2780 },
-  { name: 'May', sales: 1890 },
-  { name: 'Jun', sales: 2390 },
-  { name: 'Jul', sales: 3490 },
-  { name: 'Aug', sales: 4000 },
-  { name: 'Sep', sales: 3000 },
-  { name: 'Oct', sales: 2000 },
-  { name: 'Nov', sales: 2780 },
-  { name: 'Dec', sales: 1890 },
+const salesTrendData = [
+  { name: 'Week 1', sales: 1200 },
+  { name: 'Week 2', sales: 1450 },
+  { name: 'Week 3', sales: 1320 },
+  { name: 'Week 4', sales: 1550 },
+  { name: 'Week 5', sales: 1700 },
+  { name: 'Week 6', sales: 1600 },
+  { name: 'Week 7', sales: 1750 },
+  { name: 'Week 8', sales: 1800 },
+  { name: 'Week 9', sales: 1900 },
+  { name: 'Week 10', sales: 2000 },
+  { name: 'Week 11', sales: 2100 },
+  { name: 'Week 12', sales: 2300 },
 ];
 
 // Komponen untuk grafik overview penjualan
-const SalesOverviewChart = () => {
+const SalesTrendChart = () => {
   return (
     <motion.div
       className="relative bg-gray-800 bg-opacity-50 backdrop-blur-md shadow-lg rounded-xl p-6 border border-gray-700"
@@ -31,7 +31,7 @@ const SalesOverviewChart = () => {
       <div className="h-80">
         {/* Container responsif untuk grafik */}
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={salesData}>
+          <LineChart data={salesTrendData}>
             {/* Grid kartesian untuk grafik */}
             <CartesianGrid strokeDasharray="3 3" stroke="#4B5563" />
             {/* Sumbu X dengan data nama bulan */}
@@ -62,4 +62,4 @@ const SalesOverviewChart = () => {
   );
 };
 
-export default SalesOverviewChart; // Menyediakan komponen ini untuk digunakan di tempat lain
+export default SalesTrendChart; // Menyediakan komponen ini untuk digunakan di tempat lain
