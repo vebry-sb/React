@@ -25,7 +25,7 @@ const UserGrowthChart = () => {
       animate={{ opacity: 1, y: 0 }} // Animasi akhir (opacity 1 dan y = 0)
       transition={{ delay: 0.2 }} // Penundaan animasi selama 0.2 detik
     >
-      <h2 className="text-lg font-medium mb-4 text-gray-100">Users Growth</h2>
+      <h2 className="text-xl font-medium mb-4 text-gray-100">Users Growth</h2>
 
       <div className="h-80">
         {/* Container responsif untuk grafik */}
