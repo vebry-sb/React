@@ -50,12 +50,12 @@ const SaleOverviewChart = () => {
       <div className="w-full h-80">
         <ResponsiveContainer> {/* Menjadikan grafik responsif */}
           <AreaChart data={monthlySalesData}> {/* Grafik Area yang menampilkan data penjualan bulanan */}
-            <CartesianGrid strokeDasharray="3 3" stroke="#374151" /> {/* Grid latar belakang untuk grafik */}
+            <CartesianGrid strokeDasharray="3 3" stroke="#37415" /> {/* Grid latar belakang untuk grafik */}
             <XAxis dataKey="month" /> {/* Sumbu X dengan data bulan */}
             <YAxis /> {/* Sumbu Y */}
             <Tooltip /> {/* Menampilkan tooltip saat hover di atas grafik */}
             {/* Grafik Area untuk menampilkan data penjualan */}
-            <Area type="monotone" dataKey="sales" stroke="#10B981" fill="#10B981" />
+            <Area type="monotone" dataKey="sales" stroke="#000957" fill="#A0DEFF" />
           </AreaChart>
         </ResponsiveContainer>
       </div>
