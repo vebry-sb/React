@@ -59,7 +59,7 @@ const UsersTable = () => {
             </div>
         </div>
 
-        <div className='overflow-x-auto overflow-y-auto max-h-96'>
+        <div className='overflow-auto max-h-96'>
             <table className='min-w-full divide-y divide-gray-700'>
                 <thead>
                     <tr>
