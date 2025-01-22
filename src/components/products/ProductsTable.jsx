@@ -39,6 +39,77 @@ const PRODUCT_DATA = [
     stock: 50,
     category: 'Home',
   },
+  // Additional data starting from ID 11 to ID 20
+  {
+    id: 11,
+    name: 'Bluetooth Speaker',
+    price: 59.99,
+    stock: 15,
+    category: 'Electronics',
+  },
+  {
+    id: 12,
+    name: 'Running Shoes',
+    price: 120.0,
+    stock: 25,
+    category: 'Fitness',
+  },
+  {
+    id: 13,
+    name: 'Desk Lamp',
+    price: 45.5,
+    stock: 30,
+    category: 'Home',
+  },
+  {
+    id: 14,
+    name: 'Smartphone Stand',
+    price: 19.99,
+    stock: 100,
+    category: 'Accessories',
+  },
+  {
+    id: 15,
+    name: 'Ergonomic Chair',
+    price: 250.0,
+    stock: 10,
+    category: 'Furniture',
+  },
+  {
+    id: 16,
+    name: 'Electric Kettle',
+    price: 35.99,
+    stock: 70,
+    category: 'Home',
+  },
+  {
+    id: 17,
+    name: 'Air Purifier',
+    price: 199.99,
+    stock: 5,
+    category: 'Home',
+  },
+  {
+    id: 18,
+    name: 'Outdoor Tent',
+    price: 220.0,
+    stock: 12,
+    category: 'Outdoor',
+  },
+  {
+    id: 19,
+    name: 'Portable Charger',
+    price: 29.99,
+    stock: 40,
+    category: 'Electronics',
+  },
+  {
+    id: 20,
+    name: 'Smart Thermostat',
+    price: 150.0,
+    stock: 15,
+    category: 'Home',
+  },
 ];
 
 // Komponen utama ProductTable
@@ -84,7 +155,7 @@ const ProductTable = () => {
       </div>
 
       {/* Tabel produk */}
-      <div>
+      <div className='overflow-auto max-h-96'>
         <table className="min-w-full divide-y divide-gray-700">
           {/* Header tabel */}
           <thead>
