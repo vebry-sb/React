@@ -1,8 +1,12 @@
 import Header from "../components/common/Header"; 
 import { motion } from "framer-motion"
-import OrderListTable from "../components/order/OrderListTable"
-import { CircleCheckBig, DollarSign, ShoppingBag, Timer } from "lucide-react";
+
+import { CircleCheckBig, Clock1, DollarSign, ShoppingBag, Timer } from "lucide-react";
 import StatCard from "../components/common/StatCard";
+import OrderListTable from "../components/order/OrderListTable";
+import DailyOrderChart from "../components/order/DailyOrderChart";
+import OrderStatusDistribution from "../components/order/OrderStatusDistribution";
+
 
 const orderStats = {
   totalOrders: 1485, 
@@ -16,9 +20,8 @@ const OrdersPage = () => {
     
     <div className="flex-1 overflow-auto relative z-10">
       {/* Header dengan judul "Users" */}
-      <Header title="Order"/>
+      <Header title="Orders"/>
       
-
       <main className="max-w-7xl mx-auto py-6 px-4 lg:px-8">
         {/* Menampilkan kartu statistik pengguna */}
         <motion.div
@@ -38,7 +41,7 @@ const OrdersPage = () => {
           {/* Kartu statistik: Pengguna Baru Hari Ini */}
           <StatCard
             name="Pending Orders"
-            icon={Timer}
+            icon={Clock1}
             value={orderStats.pendingOrders}
             color="#10B981"
           />
@@ -64,7 +67,8 @@ const OrdersPage = () => {
         {/* Menampilkan Grafik Pengguna */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
           {/* Grafik Pertumbuhan Pengguna */}
-
+          <DailyOrderChart />
+          <OrderStatusDistribution />
         </div>
       </main>
     </div>
