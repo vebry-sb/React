@@ -56,9 +56,9 @@ const Sidebar = () => {
     // Sidebar container dengan animasi transisi untuk lebar sidebar (w-64 untuk terbuka dan w-16 untuk tertutup)
     <motion.div
       className={`relative z-10 transition-all duration-300 ease-in-out flex-shrink-0 ${
-        isSidebarOpen ? 'w-64' : 'w-16'
+        isSidebarOpen ? 'w-64' : 'w-20'
       }`}
-      animate={{ width: isSidebarOpen ? 256 : 64 }} // Animasi lebar sidebar
+      animate={{ width: isSidebarOpen ? 256 : 80 }} // Animasi lebar sidebar
     >
       <div className="h-full bg-gray-800 bg-opacity-50 backdrop-blur-md p-4 flex flex-col border-r border-gray-700">
         {/* Tombol untuk toggle (membuka/menutup) sidebar */}

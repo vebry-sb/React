@@ -2,7 +2,7 @@ import { motion } from "framer-motion"; // Mengimpor motion dari framer-motion u
 import { Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts"; // Mengimpor elemen-elemen dari recharts untuk membuat grafik pie
 
 // Warna-warna yang digunakan untuk setiap bagian pie chart
-const COLORS = ["#8884D8", "#82CA9D", "FF8042", "#0088FE"];
+const COLORS = ["#6B5BFF", "#4CAF50", "#FFEB3B", "#03A9F4"];
 
 // Data demografi pengguna berdasarkan rentang usia
 const userdemographicData = [

@@ -37,7 +37,8 @@ const UsersTable = () => {
         const term = e.target.value.toLowerCase(); // Mengubah kata kunci pencarian menjadi huruf kecil
         setSearchTerm(term); // Memperbarui nilai pencarian
         const filtered = userData.filter(
-            (user) => user.name.toLowerCase().includes(term) || user.email.toLocaleLowerCase().includes(term)
+            (user) => user.name.toLowerCase().includes(term) || 
+            user.email.toLocaleLowerCase().includes(term) 
         );
         setFilteredUsers(filtered); // Memperbarui daftar pengguna yang difilter
     }
