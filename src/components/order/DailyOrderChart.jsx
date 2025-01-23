@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion'
-import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { motion } from 'framer-motion' // Import motion untuk animasi
+import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'; // Import komponen yang dibutuhkan dari 'recharts'
 
 const dailyOrderData = [
   { date: "01/01", orders: 120 },
@@ -9,9 +9,7 @@ const dailyOrderData = [
   { date: "05/01", orders: 200 },
   { date: "06/01", orders: 250 },
   { date: "07/01", orders: 230 },
-];
-
-
+]; // Data penjualan harian dengan tanggal dan jumlah pesanan
 
 const DailyOrderChart = () => {
   return (
@@ -27,16 +25,16 @@ const DailyOrderChart = () => {
             {/* Container responsif untuk grafik */}
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={dailyOrderData}>
-                {/* Grid kartesian untuk grafik */}
+                {/* Grid kartesian untuk grafik, memberikan garis bantu */}
                 <CartesianGrid strokeDasharray="3 3" stroke="#4B5563" />
-                {/* Sumbu X dengan data nama bulan */}
+                {/* Sumbu X yang menunjukkan tanggal dengan data dari "date" */}
                 <XAxis dataKey="date" stroke="#9CA3AF" />
-                {/* Sumbu Y */}
+                {/* Sumbu Y untuk jumlah pesanan */}
                 <YAxis stroke="#9CA3AF" />
                 {/* Tooltip yang akan muncul saat kursor berada di atas grafik */}
                 <Tooltip
                   contentStyle={{
-                    backgroundColor: 'rgba(31, 41, 55, 0.8)', // Warna latar belakang tooltip
+                    backgroundColor: 'rgba(31, 41, 55, 0.8)', // Latar belakang tooltip
                     borderColor: '#4B5563', // Warna border tooltip
                   }}
                   itemStyle={{ color: '#E5E7EB' }} // Warna item tooltip
@@ -57,4 +55,4 @@ const DailyOrderChart = () => {
   )
 }
 
-export default DailyOrderChart
+export default DailyOrderChart; // Mengekspor komponen untuk digunakan di bagian lain aplikasi

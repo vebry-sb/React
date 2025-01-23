@@ -1,7 +1,8 @@
-import React, { useState, useMemo } from 'react';
-import { motion } from 'framer-motion';
-import { Eye } from 'lucide-react';
+import React, { useState, useMemo } from 'react'; // Import React dan hooks useState, useMemo
+import { motion } from 'framer-motion'; // Import motion untuk animasi
+import { Eye } from 'lucide-react'; // Import ikon mata (Eye) dari lucide-react
 
+// Data daftar pesanan untuk ditampilkan
 const orderListData = [
   { id: "E4501", date: "01/01", customer: "John Doe", total: 250.75, status: "Completed", category: "Electronics" },
   { id: "C3202", date: "02/01", customer: "Jane Smith", total: 120.50, status: "Pending", category: "Clothing" },
@@ -23,54 +24,54 @@ const orderListData = [
   { id: "H2818", date: "18/01", customer: "Alexander Lee", total: 320.25, status: "Completed", category: "Home & Garden" },
   { id: "B2119", date: "19/01", customer: "Amelia Walker", total: 410.00, status: "Pending", category: "Books" },
   { id: "S1920", date: "20/01", customer: "Henry Hall", total: 280.00, status: "Completed", category: "Sports & Outdoors" },
-];
+]; // Data pesanan
 
 const OrderListTable = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedTimeRange, setSelectedTimeRange] = useState("All");
+  const [searchTerm, setSearchTerm] = useState(""); // State untuk pencarian
+  const [selectedTimeRange, setSelectedTimeRange] = useState("All"); // State untuk rentang waktu
 
-  // Memoize filtered orders based on search term and selected time range
+  // Memoize hasil filter berdasarkan search term dan status yang dipilih
   const filteredOrders = useMemo(() => {
     return orderListData.filter(
       (order) =>
         (order.customer.toLowerCase().includes(searchTerm.toLowerCase()) ||
           order.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          order.status.toLowerCase().includes(searchTerm.toLowerCase())) &&
-        (selectedTimeRange === "All" || order.status === selectedTimeRange)
+          order.status.toLowerCase().includes(searchTerm.toLowerCase())) && // Mencari berdasarkan nama pelanggan, ID pesanan, atau status
+        (selectedTimeRange === "All" || order.status === selectedTimeRange) // Filter berdasarkan status pesanan
     );
-  }, [searchTerm, selectedTimeRange]);
+  }, [searchTerm, selectedTimeRange]); // Dependensi yang memicu filter ulang
 
   const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
+    setSearchTerm(e.target.value); // Mengupdate searchTerm saat pengguna mengetikkan pencarian
   };
 
   const handleViewOrder = (orderId) => {
     console.log("Viewing order with ID:", orderId);
-    // Implement your view logic here
+    // Logika untuk melihat detail pesanan
   };
 
   return (
     <motion.div
       className="bg-gray-800 bg-opacity-50 backdrop-blur-md shadow-lg rounded-xl p-6 border border-gray-700"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.2 }}
+      initial={{ opacity: 0, y: 20 }} // Animasi saat muncul
+      animate={{ opacity: 1, y: 0 }} // Animasi selesai
+      transition={{ delay: 0.2 }} // Penundaan animasi
     >
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-xl font-semibold text-gray-100">Order List</h2>
+        <h2 className="text-xl font-semibold text-gray-100">Order List</h2> {/* Judul tabel */}
         <div className="relative">
           <input
             type="text"
             placeholder="Search orders..."
             className="bg-gray-700 text-white placeholder-gray-400 rounded-lg pl-4 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             value={searchTerm}
-            onChange={handleSearch}
+            onChange={handleSearch} // Menangani perubahan pencarian
           />
         </div>
         <select
           className="bg-gray-700 text-white rounded-md px-3 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
           value={selectedTimeRange}
-          onChange={(e) => setSelectedTimeRange(e.target.value)}
+          onChange={(e) => setSelectedTimeRange(e.target.value)} // Menangani perubahan filter status
         >
           <option value="All">All</option>
           <option value="Completed">Completed</option>
@@ -94,15 +95,15 @@ const OrderListTable = () => {
           <tbody className="divide-y divide-gray-700">
             {filteredOrders.length === 0 ? (
               <tr>
-                <td colSpan="6" className="text-center text-gray-400">No orders found</td>
+                <td colSpan="6" className="text-center text-gray-400">No orders found</td> {/* Tampilkan pesan jika tidak ada data */}
               </tr>
             ) : (
               filteredOrders.map((order) => (
                 <motion.tr
                   key={order.id}
-                  initial={{ opacity: 0 }}
+                  initial={{ opacity: 0 }} // Animasi saat elemen muncul
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.3 }} // Durasi animasi
                 >
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">{order.id}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">{order.customer}</td>
@@ -116,13 +117,13 @@ const OrderListTable = () => {
                         : "bg-red-600 text-red-100"
                       }`}
                     >
-                      {order.status}
+                      {order.status} {/* Menampilkan status dengan styling sesuai status */}
                     </span>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">{order.date}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
                     <button className="text-indigo-400 hover:text-indigo-300 mr-2" onClick={() => handleViewOrder(order.id)}>
-                      <Eye size={18} />
+                      <Eye size={18} /> {/* Ikon untuk melihat detail pesanan */}
                     </button>
                   </td>
                 </motion.tr>
@@ -135,4 +136,4 @@ const OrderListTable = () => {
   );
 };
 
-export default OrderListTable;
+export default OrderListTable; // Mengekspor komponen

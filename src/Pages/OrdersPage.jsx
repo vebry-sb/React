@@ -7,67 +7,70 @@ import OrderListTable from "../components/order/OrderListTable";
 import DailyOrderChart from "../components/order/DailyOrderChart";
 import OrderStatusDistribution from "../components/order/OrderStatusDistribution";
 
-
+// Data statistik pesanan yang akan ditampilkan
 const orderStats = {
-  totalOrders: 1485, 
-  pendingOrders: 84, 
-  completedOrders: 1401, 
-  totalRevenue: 124956, 
+  totalOrders: 1485,  // Total pesanan
+  pendingOrders: 84,  // Pesanan yang masih tertunda
+  completedOrders: 1401,  // Pesanan yang telah selesai
+  totalRevenue: 124956,  // Total pendapatan
 };
 
 const OrdersPage = () => {
   return (
-    
     <div className="flex-1 overflow-auto relative z-10">
-      {/* Header dengan judul "Users" */}
+      {/* Header yang menampilkan judul halaman "Orders" */}
       <Header title="Orders"/>
       
       <main className="max-w-7xl mx-auto py-6 px-4 lg:px-8">
-        {/* Menampilkan kartu statistik pengguna */}
+        {/* Bagian kartu statistik yang akan menampilkan informasi pesanan */}
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mb-8 gap-8"
-          initial={{ opacity: 0, y: 20 }} // Menyediakan animasi ketika halaman pertama kali dimuat
-          animate={{ opacity: 1, y: 0 }} // Animasi untuk perubahan opacity dan posisi
-          transition={{ duration: 1 }} // Durasi animasi
+          initial={{ opacity: 0, y: 20 }} // Menetapkan animasi awal dengan opacity rendah dan posisi bergeser
+          animate={{ opacity: 1, y: 0 }} // Mengubah opacity menjadi penuh dan posisi kembali ke normal
+          transition={{ duration: 1 }} // Durasi animasi 1 detik
         >
-          {/* Kartu statistik: Total Pengguna */}
-
+          {/* Kartu statistik: Total Pesanan */}
           <StatCard
             name="Total Orders"
-            icon={ShoppingBag}
-            value={orderStats.totalOrders.toLocaleString()}
-            color="#6366F1"
+            icon={ShoppingBag}  // Ikon yang digunakan adalah ShoppingBag
+            value={orderStats.totalOrders.toLocaleString()}  // Menampilkan jumlah total pesanan dengan format angka
+            color="#6366F1"  // Warna ikon dan kartu
           />
-          {/* Kartu statistik: Pengguna Baru Hari Ini */}
+          
+          {/* Kartu statistik: Pesanan Tertunda */}
           <StatCard
             name="Pending Orders"
-            icon={Clock1}
-            value={orderStats.pendingOrders}
-            color="#10B981"
+            icon={Clock1}  // Ikon yang digunakan adalah Clock1
+            value={orderStats.pendingOrders}  // Menampilkan jumlah pesanan yang tertunda
+            color="#10B981"  // Warna ikon dan kartu
           />
-          {/* Kartu statistik: Pengguna Aktif */}
+          
+          {/* Kartu statistik: Pesanan Selesai */}
           <StatCard
             name="Completed Orders"
-            icon={CircleCheckBig}
-            value={orderStats.completedOrders.toLocaleString()}
-            color="#F59E0B"
+            icon={CircleCheckBig}  // Ikon yang digunakan adalah CircleCheckBig
+            value={orderStats.completedOrders.toLocaleString()}  // Menampilkan jumlah pesanan yang selesai dengan format angka
+            color="#F59E0B"  // Warna ikon dan kartu
           />
-          {/* Kartu statistik: Tingkat Churn */}
+          
+          {/* Kartu statistik: Total Pendapatan */}
           <StatCard
             name="Total Revenue"
-            icon={DollarSign}
-            value={orderStats.totalRevenue.toLocaleString()}
-            color="#EF4444"
+            icon={DollarSign}  // Ikon yang digunakan adalah DollarSign
+            value={orderStats.totalRevenue.toLocaleString()}  // Menampilkan total pendapatan dengan format angka
+            color="#EF4444"  // Warna ikon dan kartu
           />
         </motion.div>
 
-        {/* Menampilkan Tabel Pengguna */}
+        {/* Menampilkan Tabel Daftar Pesanan */}
         <OrderListTable />
 
-        {/* Menampilkan Grafik Pengguna */}
+        {/* Menampilkan Grafik dalam dua kolom */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
-          {/* Grafik Pertumbuhan Pengguna */}
+          {/* Grafik Pertumbuhan Pesanan Harian */}
           <DailyOrderChart />
+          
+          {/* Grafik Distribusi Status Pesanan */}
           <OrderStatusDistribution />
         </div>
       </main>

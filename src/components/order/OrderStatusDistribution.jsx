@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion'
-import { Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
+import { motion } from 'framer-motion' // Import motion untuk animasi
+import { Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts'; // Import komponen yang dibutuhkan dari 'recharts'
 
 const OrderStatusDistributionData = [
   { status: "Pending", count: 120 },
@@ -9,9 +9,8 @@ const OrderStatusDistributionData = [
   { status: "Cancelled", count: 50 },
 ];
 
-const COLORS = ["#F59E0B", "#3B82F6", "#10B981", "#6366F1", "#EF4444"];
-
-
+// Array berisi data status pesanan dan jumlahnya yang digunakan untuk chart
+const COLORS = ["#F59E0B", "#3B82F6", "#10B981", "#6366F1", "#EF4444"]; // Warna yang digunakan untuk setiap bagian pie chart
 
 const OrderStatusDistribution = () => {
   return (
@@ -21,31 +20,33 @@ const OrderStatusDistribution = () => {
       animate={{ opacity: 1, y: 0 }} // Animasi akhir (opacity 1 dan y = 0)
       transition={{ delay: 0.5 }} // Penundaan animasi selama 0.5 detik
     >
-      <h2 className="text-xl font-medium mb-4 text-gray-100">Users Demographic</h2>
-      <div style={{ width: "100%", height: 300 }}>
-        {/* Responsive container untuk grafik agar responsif sesuai ukuran layar */}
+      <h2 className="text-xl font-medium mb-4 text-gray-100">Users Demographic</h2> {/* Judul untuk grafik */}
+      
+      <div style={{ width: "100%", height: 300 }}> {/* Mengatur lebar dan tinggi kontainer grafik */}
+        {/* ResponsiveContainer memastikan grafik responsif dan mengikuti ukuran layar */}
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
-            {/* Pie chart dengan data yang sudah diberikan */}
+            {/* Pie chart untuk menampilkan distribusi status pesanan */}
             <Pie
-              data={OrderStatusDistributionData}
+              data={OrderStatusDistributionData} // Data yang akan digunakan di pie chart
               cx="50%" // Posisi sumbu X (pusat chart)
               cy="50%" // Posisi sumbu Y (pusat chart)
-              outerRadius={100} // Radius luar pie chart
+              outerRadius={100} // Radius luar dari pie chart
               fill="#8884d8" // Warna default untuk bagian pie chart
-              dataKey="count" // Menggunakan nilai dari properti 'value' sebagai ukuran bagian pie chart
-              label={({ status, percent }) => `${status} ${(percent * 100).toFixed(0)}%`} // Menampilkan label dengan nama rentang usia dan persentase
+              dataKey="count" // Menggunakan nilai dari properti 'count' untuk menentukan ukuran bagian pie chart
+              label={({ status, percent }) => `${status} ${(percent * 100).toFixed(0)}%`} 
+              // Label untuk setiap bagian pie, menampilkan status dan persentase
             >
-              {/* Mapping setiap data untuk memberikan warna berbeda untuk setiap bagian pie chart */}
+              {/* Menggambar setiap cell dengan warna yang berbeda berdasarkan indeks */}
               {OrderStatusDistributionData.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>
-            {/* Tooltip yang muncul saat hover di atas bagian pie */}
+            {/* Tooltip yang muncul saat pengguna hover di atas bagian pie */}
             <Tooltip
               contentStyle={{
                 backgroundColor: "rgba(31, 41, 55, 0.5)", // Latar belakang tooltip
-                borderColor: "#4B5563", // Border tooltip
+                borderColor: "#4B5563", // Warna border tooltip
               }}
               itemStyle={{ color: "#E5E73B" }} // Warna teks item di tooltip
             />
@@ -58,4 +59,4 @@ const OrderStatusDistribution = () => {
   )
 }
 
-export default OrderStatusDistribution
+export default OrderStatusDistribution; // Mengekspor komponen untuk digunakan di bagian lain aplikasi
