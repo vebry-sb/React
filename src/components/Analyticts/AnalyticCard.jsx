@@ -1,16 +1,9 @@
 import { motion } from "framer-motion";
-import {
-  ArrowDownRight,
-  ArrowUpRight,
-  DollarSign,
-  Eye,
-  ShoppingBag,
-  User,
-} from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, DollarSign, Eye, ShoppingBag, User,} from "lucide-react";
 
 const analyticData = [
   { name: "Revenue", value: "$194,956", change: 12.5, icon: DollarSign },
-  { name: "Users", value: "78,685", change: 8.3, icon: User },
+  { name: "Users", value: "78,685", change: 8.3, icon: User }, 
   { name: "Orders", value: "9,486", change: -4.3, icon: ShoppingBag },
   { name: "Page Views", value: "1,542,683", change: 18.3, icon: Eye },
 ];
@@ -40,7 +33,7 @@ const AnalyticCard = () => {
               }`}
             >
               <item.icon
-                className="text-white w-6 h-6" // Atur ukuran ikon
+                className="text-white w-6 h-6" 
               />
             </div>
           </div>

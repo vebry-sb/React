@@ -1,13 +1,12 @@
 import { Routes, Route } from 'react-router-dom'; // Mengimpor Routes dan Route dari react-router-dom
 import Sidebar from './components/common/Sidebar'; // Mengimpor Sidebar
-import OverviewPage from './Pages/OverviewPage'; // Mengimpor halaman Overview
-import ProductsPage from './Pages/ProductsPage'; // Mengimpor halaman Produk
-import UsersPage from './Pages/UsersPage';
-import SalesPage from './Pages/SalesPage'; // Mengimpor halaman Penjualan
-import OrdersPage from './Pages/OrdersPage'; // Mengimpor halaman Pesanan
-import AnalyticsPage from './Pages/AnalyticsPage'; // Mengimpor halaman Analitik
-import SettingsPage from './Pages/SettingsPage';
-
+import OverviewPage from './pages/OverviewPage'; // Mengimpor halaman Overview
+import ProductsPage from './pages/ProductsPage'; // Mengimpor halaman Produk
+import UsersPage from './pages/UsersPage';
+import SalesPage from './pages/SalesPage'; // Mengimpor halaman Penjualan
+import OrdersPage from './pages/OrdersPage'; // Mengimpor halaman Pesanan
+import AnalyticsPage from './pages/AnalyticsPage'; // Mengimpor halaman Analitik
+import SettingsPage from './pages/SettingsPage';
 
 function App() {
   return (
