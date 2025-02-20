@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import Header from '../components/common/Header'
 import Profile from '../components/settings/Profile'
 import SettingSection from '../components/settings/SettingSection'
+import Notifications from '../components/settings/Notifications'
 
 
 const SettingsPage = () => {
@@ -12,6 +13,7 @@ const SettingsPage = () => {
 
     <main className='"max-w-7xl mx-auto py-6 px-4 lg:px-8"'>
       <Profile />
+      <Notifications />
       
 
     </main>
